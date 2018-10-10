@@ -17,7 +17,7 @@ export class AppComponent {
   tiempo:any;
   timer:any;
   constructor(private http: HttpClient){
-    this.tiempo =4;
+    this.tiempo =2000;
     interval(this.tiempo).subscribe(x =>
       this.getData()
     );
