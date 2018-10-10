@@ -15,6 +15,7 @@ export class AppComponent {
   title = 'thermometer';
   temperaturas:any;
   tiempo:any;
+  timer:any;
   constructor(private http: HttpClient){
     this.tiempo =4;
     interval(this.tiempo).subscribe(x =>
@@ -37,7 +38,7 @@ export class AppComponent {
     });
   }
   cambiar(){
-    console.log("se cambio"+this.timer;
+    console.log("se cambio"+this.timer);
     this.tiempo = this.timer;
   }
 }
