@@ -65,7 +65,7 @@ var cardChart1 = new Chart($('#card-chart1'), {
     }
   }
 }); // eslint-disable-next-line no-unused-vars
-
+/*
 var cardChart2 = new Chart($('#card-chart2'), {
   type: 'line',
   data: {
@@ -326,5 +326,5 @@ var brandBoxChart4 = new Chart($('#social-box-chart-4'), {
     }]
   },
   options: brandBoxChartOptions
-});
+});*/
 //# sourceMappingURL=main.js.map

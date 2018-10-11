@@ -6,94 +6,97 @@
   <meta name="author" content="">
   <meta name="keyword" content="">
   <title>Termometro</title>
-  <!-- Main styles for this application-->
-  <!-- <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet"> -->
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-   <header class="app-header navbar">
-     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-       <span class="navbar-toggler-icon"></span>
-     </button>
-     <a class="navbar-brand" href="#">
-     </a>
-     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
-       <span class="navbar-toggler-icon"></span>
-     </button>
-   </header>
-   <div class="app-body">
-     <div class="sidebar">
-       <nav class="sidebar-nav">
-         <ul class="nav">
-           <li class="nav-item">
-             <a class="nav-link" href="">
-               <i class="nav-icon icon-speedometer"></i> Temperatura
-             </a>
-           </li>
+  <header class="app-header navbar">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img width="80" src="src/assets/img/logo.png" alt="">
+    </a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </header>
+  <div class="app-body">
+    <div class="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="nav-icon icon-speedometer"></i> Temperatura
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    </div>
+    <main class="main">
+      <br>
+      <div class="container-fluid">
+        <!-- <label for="exampleFormControlSelect1">Selecciona los segundos de refresh</label>
+        <select (change)="cambiar()" [(ngModel)]="timer" class="form-control" id="refresh">
+        <option [selected]>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select> -->
+      <br>
+      <br>
+      <div class="animated fadeIn">
+        <div class="row">
+          <div class="col-sm-12 col-lg-12">
+            <div class="card text-white bg-primary">
+              <div class="card-body pb-0">
+                <div class="text-value" st ><i class="nav-icon  icon-fire"></i><label>Temperatura:</label> <h1>{{temperatura}}</h1> </div>
+                <div><h3><label>Fecha:</label>{{fecha}}</h3></div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-->
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-lg-12">
+            <div class="card text-white bg-primary">
+              <div class="card-body pb-0">
+                <label>TODAS LAS TEMPERATURAS</label>
+                <div class="" *ngFor="let temp of temperaturas?.reverse() " >
+                  <div class="text-value" st><h4><label>Temperatura:</label>{{temp.temperature}}</h4> </div>
+                  <div><h6><label>Fecha:</label>{{temp.date}}</h6></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-->
+        </div>
+        <div class="row vertical-align chart-container">
+                <canvas class="chart" id="card-chart1" height="70"></canvas>
+          <canvas id="myChart" class="col-xs-12"></canvas>
+          <div id="chartjs-tooltip"></div>
+        </div>
+        <!-- /.row-->
+      </div>
+    </div>
+  </main>
+</div>
+<footer class="app-footer">
+  <div>
+    <span>&copy; 2018 TEC TEPIC.</span>
+  </div>
+  <div class="ml-auto">
+  </div>
+</footer>
+<!-- CoreUI and necessary plugins-->
 
-         </ul>
-       </nav>
-       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-     </div>
-     <main class="main">
-     <br>
-       <div class="container-fluid">
-         <label for="exampleFormControlSelect1">Selecciona los segundos de refresh</label>
-    <select (change)="cambiar()" [(ngModel)]="timer" class="form-control" id="refresh">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    </select>
-      <br>
-      <br>
-         <div class="animated fadeIn">
-           <div class="row">
-             <div class="col-sm-12 col-lg-12">
-               <div class="card text-white bg-primary">
-                 <div class="card-body pb-0">
-                   <div class="text-value" st ><i class="nav-icon  icon-fire"></i><label>Temperatura:</label> <h1>{{temperatura}}</h1> </div>
-                   <div><h3><label>Fecha:</label>{{fecha}}</h3></div>
-                 </div>
-               </div>
-             </div>
-             <!-- /.col-->
-           </div>
-           <div class="row">
-             <div class="col-sm-12 col-lg-12">
-               <div class="card text-white bg-primary">
-                 <div class="card-body pb-0">
-                   <label>TODAS LAS TEMPERATURAS</label>
-                   <div class="" *ngFor="let temp of temperaturas" >
-                     <div class="text-value" st><h4><label>Temperatura:</label>{{temp.temperature}}</h4> </div>
-                     <div><h6><label>Fecha:</label>{{temp.date}}</h6></div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-             <!-- /.col-->
-           </div>
-           <!-- /.row-->
-         </div>
-       </div>
-     </main>
-   </div>
-   <footer class="app-footer">
-     <div>
-       <span>&copy; 2018 TEC TEPIC.</span>
-     </div>
-     <div class="ml-auto">
-     </div>
-   </footer>
-   <!-- CoreUI and necessary plugins-->
-   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-   <script src="node_modules/pace-progress/pace.min.js"></script>
-   <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
-   <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
-   <!-- Plugins and scripts required by this view-->
-   <script src="node_modules/chart.js/dist/Chart.min.js"></script>
-   <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
-   <script src="js/main.js"></script>
- </body>
+<!-- <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/pace-progress/pace.min.js"></script>
+<script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+<script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+<script src="node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
+<script src="js/main.js"></script> -->
+</body>

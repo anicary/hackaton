@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {Observable} from 'rxjs';
 import { interval } from 'rxjs';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -12,16 +13,15 @@ import { interval } from 'rxjs';
 export class AppComponent {
   temperatura:any;
   fecha:any;
-  title = 'thermometer';
+  title = 'Thermometer';
   temperaturas:any;
   tiempo:any;
   timer:any;
+  contador=interval(4000);
   constructor(private http: HttpClient){
-    this.tiempo =2000;
-    interval(this.tiempo).subscribe(x =>
+    interval(4000).subscribe(x =>
       this.getData()
     );
-
   }
   ngOnInit(): void {
     this.getData();
@@ -39,6 +39,7 @@ export class AppComponent {
   }
   cambiar(){
     console.log("se cambio"+this.timer);
+    // this.contador.unsubscribe();
     this.tiempo = this.timer;
   }
 }
