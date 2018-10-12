@@ -44,7 +44,7 @@ export class AppComponent {
     console.log("se cambio"+this.timer);
     this.tiempo = this.timer;
   }
-  public lineChartData:Array<any> = [
+/*  public lineChartData:Array<any> = [
     [65, 59, 80, 81, 56, 55, 40]
   ];
   public lineChartLabels:Array<any> = ['Enero', 'Febrero', 'Marzp', 'Abril', 'Mayo', 'Junio', 'Julio'];
@@ -59,5 +59,5 @@ export class AppComponent {
   }
   public chartHovered(e:any):void {
     console.log(e);
-  }
+  }*/
 }
