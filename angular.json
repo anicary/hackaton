@@ -40,7 +40,9 @@
               "node_modules/chart.js/dist/Chart.min.js",
               "node_modules/@coreui/coreui/dist/js/coreui.min.js",
               "node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js",
-              "src/assets/js/main.js"
+              "node_modules/jquery-match-height/dist/jquery.matchHeight.js",
+              "src/assets/js/main.js",
+              "src/assets/js/main2.js"
             ]
           },
           "configurations": {

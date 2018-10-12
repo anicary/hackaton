@@ -1,0 +1,3 @@
+$(function() {
+  $('.caro').matchHeight();
+});
