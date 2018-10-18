@@ -285,15 +285,15 @@
                 <div class="card-body pb-0">
                   <div class="text-value" st >
                     <h2>
-                      <i class="nav-icon  icon-fire"  [ngClass]="{'text-danger': temperatura >70, 'text-primary':  temperatura <=70}"></i>
+                      <i class="nav-icon  icon-fire"  [ngClass]="{'text-danger': temperatura.temperature >70, 'text-primary':  temperatura.temperature <=70}"></i>
                       Temperatura:</h2>
                       <h1>
                         <b>
-                          <span [ngClass]="{'text-danger': temperatura >70, 'text-primary':  temperatura <=70}">{{temperatura}} ℉</span></b>
+                          <span [ngClass]="{'text-danger': temperatura >70, 'text-primary':  temperatura <=70}">{{temperatura.temperature}} ℉</span></b>
                         </h1>
                       </div>
                       <div>
-                        <h3><label>Fecha:</label>  {{fecha |date : 'full'}}</h3>
+                        <h3><label>Fecha:</label>  {{temperatura.date |date : 'full'}}</h3>
                       </div>
                     </div>
                   </div>
@@ -314,8 +314,8 @@
                               <div class="percent percent-d">25%</div>
                               <div class="percent percent-e">0%</div>
                             </div>
-                            <div class="mercury" [style.height]="(temperatura*0.8)+'%'" >
-                              <div class="percent-current">{{temperatura}} ℉</div>
+                            <div class="mercury" [style.height]="(temperatura.temperature*0.8)+'%'" >
+                              <div class="percent-current">{{temperatura.temperature}} ℉</div>
                               <div class="mask">
                                 <div class="bg-color"></div>
                               </div>
@@ -333,7 +333,7 @@
                   <div class="card    shadow">
                     <div class="card-body pb-0">
                       <h3>TODAS LAS TEMPERATURAS</h3>
-                      <div class="" *ngFor="let temp of temperaturas?.reverse() " >
+                      <div class="" *ngFor="let temp of temperaturas" >
                         <div class="text-value" st>
                           <h4><label>Temperatura:</label><span  [ngClass]="{'text-danger': temp.temperature >70, 'text-primary':  temp.temperature <=70}">  {{temp.temperature }}  ℉</span></h4> </div>
                           <div><h6><label>Fecha: </label>  {{temp.date | date : 'full'}}</h6></div>
@@ -347,13 +347,13 @@
                   <div class="col-md-12">
                     <div class="card   shadow" >
                       <div class="card-body pb-0">
-                        <!-- <canvas baseChart
+                        <canvas baseChart
                         [data]="lineChartData"
                         [labels]="lineChartLabels"
                         [options]="lineChartOptions"
                         [chartType]="lineChartType"
                         (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)" ></canvas> -->
+                        (chartClick)="chartClicked($event)" ></canvas>
                         </div>
                       </div>
                   </div>

@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import { interval } from 'rxjs';
 import $ from 'jquery';
 import { Chart } from 'chart.js';
+import { ChartsModule } from 'ng2-charts';
 
 @Component({
   selector: 'app-root',
@@ -31,20 +32,18 @@ export class AppComponent {
   getData(){
     this.http.get('https://lit-thicket-52542.herokuapp.com/lasttemp').subscribe(data => {
       console.log(data);
-      this.temperatura=data[0]["temperature"];
-      this.fecha=data[0]["date"];
+      this.temperatura=data["temperatura"];
+      //this.fecha=data[0]["date"];
     });
     this.http.get('https://lit-thicket-52542.herokuapp.com/temps').subscribe(data => {
-      console.log(data);
-      this.temperaturas=data;
+     this.temperaturas=data["temperaturas"];
     });
-
   }
   cambiar(){
     console.log("se cambio"+this.timer);
     this.tiempo = this.timer;
   }
-/*  public lineChartData:Array<any> = [
+  public lineChartData:Array<any> = [
     [65, 59, 80, 81, 56, 55, 40]
   ];
   public lineChartLabels:Array<any> = ['Enero', 'Febrero', 'Marzp', 'Abril', 'Mayo', 'Junio', 'Julio'];
@@ -59,5 +58,5 @@ export class AppComponent {
   }
   public chartHovered(e:any):void {
     console.log(e);
-  }*/
+  }
 }
